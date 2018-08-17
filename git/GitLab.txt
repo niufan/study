@@ -1,0 +1,26 @@
+GitLab 是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
+
+建议：至少分配4GB的内存 给 GitLab 
+安装方法：https://www.gitlab.com.cn/installation/
+
+CentOS 7
+
+允许HTTPS访问（预计10分钟）
+sudo yum install -y curl policycoreutils-python openssh-server
+sudo systemctl enable sshd
+sudo systemctl start sshd
+sudo firewall-cmd --permanent --add-service=http
+sudo systemctl reload firewalld
+
+安装邮件服务（预计20分钟）
+sudo yum install postfix
+sudo systemctl enable postfix
+sudo systemctl start postfix
+
+添加GitLab安装包仓库（预计10分钟）
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+
+安装GitLab（预计30分钟）
+sudo EXTERNAL_URL="http://gitlab.example.com" yum install -y gitlab-ee
+
+

@@ -1,0 +1,6 @@
+# 查看git日志
+git log
+# 退出git log
+英文状态下按：q
+# 回退已经commit，未push
+git reset --hard 版本号
