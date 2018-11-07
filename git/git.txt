@@ -4,3 +4,7 @@ git log
 英文状态下按：q
 # 回退已经commit，未push
 git reset --hard 版本号
+# 打tag
+git tag -a 2.0.0 -m "2018-11-06"
+# 显示tag
+git tag 
